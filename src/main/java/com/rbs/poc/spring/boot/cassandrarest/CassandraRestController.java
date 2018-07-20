@@ -37,7 +37,8 @@ public class CassandraRestController {
 
     @RequestMapping("/getflux")
     public @ResponseBody Flux<User> getUserAsyncFlux(@RequestParam(value="id", defaultValue="1") String id) throws Exception {
-        return userRepository.listByCassIdF(Integer.valueOf(id));
+        //return userRepository.listByCassIdF(Integer.valueOf(id));
+        return userRepository.listByCassIdF(new Random().nextInt(Integer.valueOf(id)));
     }
 
     @RequestMapping("/getfluxmass")
